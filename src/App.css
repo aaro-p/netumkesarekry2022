@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
 .personTable{
     border-collapse: collapse;
     margin: 25px 0;
@@ -43,7 +48,6 @@
     margin-inline: auto;
     width: min(95%, 830px);
     padding-top: 10vh;
-    font-family: 'Quicksand', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -104,7 +108,6 @@
     min-width: 22%;
     max-height: 30%;
     font-weight: bold;
-    font-family: 'Quicksand', sans-serif;
     letter-spacing: 1px;
 }
 
