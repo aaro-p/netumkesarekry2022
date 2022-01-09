@@ -3,6 +3,8 @@
 Suoritettu front-end tehtävä, eli tehtävä `2.1 React & TypeScript `  <br/>
 Ohjelmassa toimii pakolliset kohdat, sekä bonuskohdat 2 ja 3.
 
+netlify:https://netumkesarekry2022.netlify.app/
+
 
 ## Available Scripts
 
