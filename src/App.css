@@ -10,7 +10,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     width: 100%;
     margin-inline: auto;
-    border-bottom: solid 4px #04AA6D;
 }
 
 .personTable thead tr {
@@ -30,10 +29,6 @@ body {
     border-left: solid 1px rgba(64, 64, 64, 0.38);
 }
 
-.personTable th {
-    border: solid 1px #04AA6D;
-}
-
 .personTable td {
     font-weight: bold;
     font-size: 0.9em;
@@ -41,6 +36,10 @@ body {
 
 .personTable tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
+}
+
+.personTable tbody{
+    border-bottom: solid 5px #04AA6D;
 }
 
 
