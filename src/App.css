@@ -128,7 +128,8 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     padding: 17px 0;
     background-color: #04AA6D;
     color: white;

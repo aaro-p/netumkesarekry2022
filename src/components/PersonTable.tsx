@@ -3,6 +3,7 @@ import {IAllPersons} from "../interfaces/IAllPersons";
 import {FaSort} from "react-icons/fa";
 
 
+
 const PersonTable: FC = () => {
 
     //init local states
@@ -10,7 +11,7 @@ const PersonTable: FC = () => {
         person: {
             firstName: "",
             lastName: "",
-            age: ""
+            age: "",
         },
         allPersons: []
     })
@@ -36,7 +37,7 @@ const PersonTable: FC = () => {
             person: {
                 firstName: "",
                 lastName: "",
-                age: ""
+                age: "",
             }, allPersons: [...personState.allPersons, personState.person]
         })
 
@@ -92,14 +93,14 @@ const PersonTable: FC = () => {
         if (sortOrder === "ASC") {
 
             let sorted = personState.allPersons.sort((a, b) => {
-                return a.age.toLowerCase() > b.age.toLowerCase() ? 1 : -1;
+                return a.age > b.age ? 1 : -1;
             })
             setPersonState({...personState, allPersons: sorted})
             setSortOrder("DSC");
         }
         if (sortOrder === "DSC") {
             let sorted = [...personState.allPersons].sort((a, b) => {
-                return a.age.toLowerCase() < b.age.toLowerCase() ? 1 : -1;
+                return a.age < b.age ? 1 : -1;
             })
             setPersonState({...personState, allPersons: sorted})
             setSortOrder("ASC");
@@ -108,14 +109,8 @@ const PersonTable: FC = () => {
 
 
     //delete person from table
-    const deletePerson = (firstname: string, lastname: string, age: string) => {
-        let new_persons = personState.allPersons.filter((person) => {
-            return !(
-                firstname === person.firstName &&
-                lastname === person.lastName &&
-                age === person.age
-            );
-        });
+    const deletePerson = (id: number) => {
+        let new_persons = personState.allPersons.filter((person, i) => id !== i);
         setPersonState({...personState, allPersons: new_persons});
     }
 
@@ -145,7 +140,8 @@ const PersonTable: FC = () => {
                     <input
                         required
                         id="personAge"
-                        type="text"
+                        type="number"
+                        min={1}
                         name="age"
                         value={personState.person.age}
                         placeholder="Age*"
@@ -179,7 +175,8 @@ const PersonTable: FC = () => {
                             <td>{person.age}</td>
                             <td>
                                 <button
-                                    onClick={() => deletePerson(person.firstName, person.lastName, person.age)}
+                                    // onClick={() => deletePerson(person.firstName, person.lastName, person.age)}
+                                    onClick={() => deletePerson(index)}
                                     className="delete-button"
                                 >Delete
                                 </button>
